@@ -12,7 +12,7 @@ const ProductComponent = () => {
           <div className="ui link cards">
             <div className="card">
               <div className="image">
-                <img src={image} alt={title} />
+                <img src={image} className="ui small image" alt={title} />
               </div>
               <div className="content">
                 <div className="header">{title}</div>

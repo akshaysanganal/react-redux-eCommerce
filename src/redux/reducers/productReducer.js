@@ -30,8 +30,13 @@ export const productInCartReducer = (state = [], { type, payload }) => {
     case ActionTypes.ADD_TO_CART:
       return [...state, payload];
     case ActionTypes.REMOVE_FROM_CART:
-      // remove only the payload item
-      return [];
+      let idx = -1;
+      state.find(function (item, i) {
+        if (item.id === payload) {
+          idx = i;
+        }
+      });
+      return [...state.slice(0, idx), ...state.slice(idx + 1)];
     default:
       return state;
   }

@@ -7,24 +7,25 @@ const Header = () => {
   const [cartCount, setcartCount] = useState(0);
 
   useEffect(() => {
+    console.log(cart);
     setcartCount(cart.length);
-  });
+  }, [cart]);
   return (
     <div className="ui fixed menu">
       <div className="ui container center">
         <Link to={`/`}>
           <h2 className="black-font">Fake Shop</h2>
         </Link>
-        <div class="right menu">
-          <div>
-            <i className="fa" style={{ fontSize: "24px" }}>
+        <div className="right menu">
+          <Link to={`/cart`}>
+            <i className="fa black-font" style={{ fontSize: "24px" }}>
               &#xf07a;
             </i>
             <span className="badge badge-warning" id="lblCartCount">
               {" "}
               {cartCount}{" "}
             </span>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

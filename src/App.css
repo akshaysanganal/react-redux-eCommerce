@@ -61,3 +61,7 @@
 .black-font {
   color: black;
 }
+
+.marginTopTen {
+  margin-top: 5% !important;
+}
